@@ -4,12 +4,19 @@
   "description": "a room based chat app",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "test": "mocha server/**/*.test.js",
+    "text-watch": "nodemon --exec 'npm test'"
   },
   "author": "Joginder Pawan Kumar",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "nodemon": "^1.17.1",
     "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "expect": "^22.4.0",
+    "mocha": "^5.0.4"
   }
 }
