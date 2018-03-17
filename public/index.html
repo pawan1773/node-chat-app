@@ -16,28 +16,27 @@
     <nav class="grey darken-3">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo center">ChatApp</a>
+                <a href="#" class="brand-logo center">ChatSpace</a>
             </div>
         </div>
     </nav>
     <div class="row">
-        <div class="row">
-            <div class="col s12 m10 offset-m2">
-                <h1>Welcome to Chat app.</h1>
-                <ol id="messages"></ol>
-            </div>
+        <div class="col s12 m2 hide-on-small-only green" style="min-height: 100vh;">
+            <h4>Users</h4>
         </div>
-        <div class="row">
-            <div class="col s12 m10 offset-m2">
-                <form id="message-form">
-                    <div class="input-field">
-                        <input id="message" name="message" type="text" />
-                        <label for="input_text">Message</label>
-                        <button class="green waves-effect waves-light btn">
-                            <i class="material-icons right">message</i>Send</button>
-                    </div>
-                </form>
-            </div>
+        <div class="col s12 m10">
+            <h3>Welcome to ChatSpace</h3>
+            <ol id="messages"></ol>
+            <form id="message-form">
+                <div class="input-field col s12 m10">
+                    <input id="message" name="message" type="text" />
+                    <label for="input_text">Message</label>
+                </div>
+                <div class="input-field col s12 m2">
+                    <button class="green waves-effect waves-light btn">
+                        <i class="material-icons right">message</i>Send</button>
+                </div>
+            </form>
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
