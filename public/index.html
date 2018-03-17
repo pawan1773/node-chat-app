@@ -10,7 +10,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title>ChatSpace</title>
+    <title>ChatSpace | Join</title>
 </head>
 
 <body>
@@ -21,50 +21,40 @@
             </div>
         </div>
     </nav>
-    <div id="main-row" class="row">
-        <div id="left-panel" class="col s12 m2 hide-on-small-only grey lighten-3">
-            <h5 class="center-align">Chatters</h5>
-            <div class="divider"></div>
-        </div>
-        <div id="right-panel" class="col s12 m10">
-            <div class="section">
-                <h4>Welcome to ChatSpace</h4>
-                <ul id="messages"></ul>
-            </div>
-            <div class="divider"></div>
+    <div class="container">
+        <div class="row">
+            <div id="login-card" class="col s12 m6 push-m3">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+                        <h4 class="center-align">Join a Chat</h4>
+                        <form class="container" action="/chat.html">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">face</i>
+                                    <input id="display_name" type="text">
+                                    <label for="display_name">Display name</label>
+                                </div>
 
-            <div class="section">
-                <form id="message-form">
-                    <div class="input-field col s12 m12 l10">
-                        <input id="message" name="message" type="text" autofocus autocomplete="off"/>
-                        <label for="input_text">Type your message...</label>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">domain</i>
+                                    <input id="room_name" type="text">
+                                    <label for="room_name">Room name</label>
+                                </div>
+
+                                <div class="input-field col s2 push-s10"></div>
+                                    <button class="green waves-effect waves-light btn">
+                                        <i class="material-icons right">send</i>Join</button>
+                                </div>
+
+                            </div>
+                        </form>
                     </div>
-                    <div class="input-field col s12 m12 l2">
-                        <button class="green waves-effect waves-light btn">
-                            <i class="material-icons right">message</i>Send</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-
-    <script id="message-template" type="text/template">
-        <li class="msg">
-            <div class="msg-title">
-                <h5>{{from}}</h5>
-                <span>{{createdAt}}</span>
-            </div>
-            <div class="msg-body">
-                <p>{{text}}</p>
-            </div>
-        </li>
-    </script>
-
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
-    <script src="/js/libs/moment.js"></script>
-    <script src="/js/libs/mustache.js"></script>
-    <script src="/js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
 

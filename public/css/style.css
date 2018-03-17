@@ -4,6 +4,10 @@ body {
     padding: 0 auto;
 }
 
+#login-card {
+    margin-top: 20px;
+}
+
 #main-row {
     display: flex;
 }

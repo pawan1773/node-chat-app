@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>ChatSpace | Room</title>
+</head>
+
+<body>
+    <nav class="grey darken-3">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">ChatSpace</a>
+            </div>
+        </div>
+    </nav>
+    <div id="main-row" class="row">
+        <div id="left-panel" class="col s12 m2 hide-on-small-only grey lighten-3">
+            <h5 class="center-align">Chatters</h5>
+            <div class="divider"></div>
+        </div>
+        <div id="right-panel" class="col s12 m10">
+            <div class="section">
+                <h4>Welcome to ChatSpace</h4>
+                <ul id="messages"></ul>
+            </div>
+            <div class="divider"></div>
+
+            <div class="section">
+                <form id="message-form">
+                    <div class="input-field col s12 m12 l10">
+                        <input id="message" name="message" type="text" autofocus autocomplete="off"/>
+                        <label for="input_text">Type your message...</label>
+                    </div>
+                    <div class="input-field col s12 m12 l2">
+                        <button class="green waves-effect waves-light btn">
+                            <i class="material-icons right">message</i>Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script id="message-template" type="text/template">
+        <li class="msg">
+            <div class="msg-title">
+                <h5>{{from}}</h5>
+                <span>{{createdAt}}</span>
+            </div>
+            <div class="msg-body">
+                <p>{{text}}</p>
+            </div>
+        </li>
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/libs/moment.js"></script>
+    <script src="/js/libs/mustache.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
+</html>
