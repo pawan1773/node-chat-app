@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <title>ChatApp</title>
 </head>
+
 <body>
     <p>Welcome to Chat app.</p>
 
     <ol id="messages"></ol>
-
-    <form id="message-form">
-        <input name="message" type="text" placeholder="Message"/>
-        <button>Send</button>
-    </form>
-
+    <div class="row">
+        <form id="message-form">
+            <div class="input-field col s6">
+                <input id="message" name="message" type="text" />
+                <label for="input_text">Message</label>
+                <button class="waves-effect waves-light btn">
+                    <i class="material-icons right">message</i>Send Message</button>
+            </div>
+        </form>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
+
 </html>
