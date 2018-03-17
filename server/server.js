@@ -14,9 +14,9 @@ const io = socketIO(server);
 app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
-    console.log('User connected');
+    console.log('New user connected');
 
-    socket.emit('newMessage', generateMessage('Admin', 'Welcome to Chat app'));
+    socket.emit('newMessage', generateMessage('Admin', 'Welcome to ChatSpace'));
 
     socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'))
 
@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
         console.log('createMessage', message);
         // to emit to every user
         io.emit('newMessage', generateMessage(message.from, message.text));
-        callback('this is from server');
+        callback();
     });
 
     /* socket.on('createLocationMessage', (coords) => {
