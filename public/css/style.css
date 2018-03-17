@@ -5,8 +5,9 @@ body {
 }
 
 #main-row {
-    flex: 1 !important;
+    display: flex;
 }
+
 #left-panel {
     min-height: 100vh !important;
 }
