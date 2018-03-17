@@ -23,13 +23,13 @@
     </nav>
     <div id="main-row" class="row">
         <div id="left-panel" class="col s12 m2 hide-on-small-only grey lighten-3">
-            <h5>Chatters</h5>
+            <h5 class="center-align">Chatters</h5>
             <div class="divider"></div>
         </div>
         <div class="col s12 m10">
             <div class="section">
                 <h4>Welcome to ChatSpace</h4>
-                <ol id="messages"></ol>
+                <ul id="messages"></ul>
             </div>
             <div class="divider"></div>
 
@@ -47,8 +47,23 @@
             </div>
         </div>
     </div>
+
+    <script id="message-template" type="text/template">
+        <li class="msg">
+            <div class="msg-title">
+                <h5>{{from}}</h5>
+                <span>{{createdAt}}</span>
+            </div>
+            <div class="msg-body">
+                <p>{{text}}</p>
+            </div>
+        </li>
+    </script>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/libs/moment.js"></script>
+    <script src="/js/libs/mustache.js"></script>
     <script src="/js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
