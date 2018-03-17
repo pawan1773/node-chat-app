@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>ChatApp</title>
 </head>
 
@@ -20,23 +21,29 @@
             </div>
         </div>
     </nav>
-    <div class="row">
-        <div class="col s12 m2 hide-on-small-only green" style="min-height: 100vh;">
-            <h4>Users</h4>
+    <div id="main-row" class="row">
+        <div id="left-panel" class="col s12 m2 hide-on-small-only grey lighten-2">
+            <h4>Chatters</h4>
         </div>
         <div class="col s12 m10">
-            <h3>Welcome to ChatSpace</h3>
-            <ol id="messages"></ol>
-            <form id="message-form">
-                <div class="input-field col s12 m12 l10">
-                    <input id="message" name="message" type="text" />
-                    <label for="input_text">Message</label>
-                </div>
-                <div class="input-field col s12 m12 l2">
-                    <button class="green waves-effect waves-light btn">
-                        <i class="material-icons right">message</i>Send</button>
-                </div>
-            </form>
+            <div class="section">
+                <h4>Welcome to ChatSpace</h4>
+                <ol id="messages"></ol>
+            </div>
+            <div class="divider"></div>
+
+            <div class="section">
+                <form id="message-form" style="bottom:0">
+                    <div class="input-field col s12 m12 l10">
+                        <input id="message" name="message" type="text" />
+                        <label for="input_text">Type your message...</label>
+                    </div>
+                    <div class="input-field col s12 m12 l2">
+                        <button class="green waves-effect waves-light btn">
+                            <i class="material-icons right">message</i>Send</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
