@@ -1,0 +1,12 @@
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+#left-panel{
+    min-height: 100vh !important;
+}
+
+#main-row {
+    margin-bottom: 0 !important;
+}
