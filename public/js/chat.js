@@ -1,7 +1,14 @@
 var socket = io();
 
 socket.on('connect', function () {
-    console.log('Connected to server');
+    var params = jQuery.deparam(window.location.search);
+    socket.emit('join', params, function (err) {
+        if (err) {
+            window.location.href = '/';
+        } else {
+            console.log('No errors');
+        }
+    });
 });
 
 socket.on('disconnect', function () {
@@ -14,17 +21,10 @@ socket.on('newMessage', function (message) {
     var html = Mustache.render(template, {
         text: message.text,
         from: message.from,
-        createdAt:formattedTime
+        createdAt: formattedTime
     });
 
     $('#messages').append(html);
-
-   /*  var formattedTime = moment(message.createdAt).format('h:mm a')
-    console.log('newMessage', message);
-    var li = $('<li></li>');
-    li.text(`${message.from}: ${formattedTime} ${message.text}`);
-
-    $('#messages').append(li); */
 });
 
 $('#message-form').on('submit', function (e) {
@@ -40,3 +40,5 @@ $('#message-form').on('submit', function (e) {
         messageTextBox.val('');
     });
 });
+
+
