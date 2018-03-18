@@ -2,6 +2,7 @@ var socket = io();
 
 socket.on('connect', function () {
     var params = jQuery.deparam(window.location.search);
+
     socket.emit('join', params, function (err) {
         if (err) {
             window.location.href = '/';
@@ -13,6 +14,13 @@ socket.on('connect', function () {
 
 socket.on('disconnect', function () {
     console.log('Disconnected from server');
+});
+
+socket.on('updateUserList', function (users) {
+    var usersDiv = $('#users');
+    users.forEach(function (user) {
+        usersDiv.append($('<div class="chip green lighten-1 chip-margin"></div>').text(user));
+    })
 });
 
 socket.on('newMessage', function (message) {
@@ -40,5 +48,3 @@ $('#message-form').on('submit', function (e) {
         messageTextBox.val('');
     });
 });
-
-
