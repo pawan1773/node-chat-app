@@ -36,6 +36,14 @@ ol {
     box-shadow: none;
 }
 
+.msg:nth-child(even) {
+    background-color: #f5f5f5 !important;
+}
+
+.msg:nth-child(odd) {
+    background-color: #fafafa !important;
+}
+
 .msg-title {
     padding: 2px 5px 0px 10px;
     display: flex !important;
@@ -65,7 +73,7 @@ ol {
 }
 
 .chip-margin {
-    margin: 5px 15px 5px 5px;
+    margin: 5px 15px 5px 1px;
 }
 
 .chip {
