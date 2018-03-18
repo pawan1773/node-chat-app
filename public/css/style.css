@@ -30,8 +30,16 @@ ol {
     padding-left: 0.5em;
 }
 
+.msg {
+    margin-bottom: 1px;
+    border-radius: 16px;
+    box-shadow: none;
+}
+
 .msg-title {
+    padding: 2px 5px 0px 10px;
     display: flex !important;
+    margin-bottom: 0px !important;
 }
 
 .msg-title h5 {
@@ -48,7 +56,7 @@ ol {
 }
 
 .msg-body {
-    padding-bottom: 0px;
+    padding: 0px 5px 1px 10px;
     margin-bottom: 0px;
 }
 
