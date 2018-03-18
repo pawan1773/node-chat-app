@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
     console.log('New user connected');
     socket.on('join', (params, callback) => {
         if (!isRealString(params.name) || !isRealString(params.room)) {
-            return callback('Name and Room are required');
+            return callback('Name and room name are required.');
         }
 
         socket.join(params.room);
@@ -35,9 +35,12 @@ io.on('connection', (socket) => {
     });
 
     socket.on('createMessage', (message, callback) => {
-        console.log('createMessage', message);
-        // to emit to every user
-        io.emit('newMessage', generateMessage(message.from, message.text));
+        var user = users.getUser(socket.id);
+
+        if (user && isRealString(message.text)) {
+            io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));
+        }
+
         callback();
     });
 
@@ -49,7 +52,6 @@ io.on('connection', (socket) => {
             io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has left.`));
         }
     });
-
 });
 
 server.listen(port, () => console.log(`Server running on port ${port}.`));

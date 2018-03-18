@@ -17,10 +17,12 @@ socket.on('disconnect', function () {
 });
 
 socket.on('updateUserList', function (users) {
-    var usersDiv = $('#users');
+    $('#users').empty();
+    var chipsContainer = $('<div></div>');
     users.forEach(function (user) {
-        usersDiv.append($('<div class="chip green lighten-1 chip-margin"></div>').text(user));
-    })
+        chipsContainer.append($('<div class="chip green lighten-1 chip-margin"></div>').text(user));
+    });
+    $('#users').html(chipsContainer);
 });
 
 socket.on('newMessage', function (message) {
